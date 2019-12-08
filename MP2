@@ -1,0 +1,35 @@
+x1 = input('Enter the x-axis in the first point: ');
+y1 = input('Enter the y-axis in the first point: ');
+x2 = input('Enter the x-axis in the second point: ');
+y2 = input('Enter the y-axis in the second point: ');
+x3 = input('Enter the x-axis in the third point: ');
+y3 = input('Enter the y-axis in the third point: ');
+
+
+D = (((x1^2-x3^2)*(x1-x2)+( y1^2-y3^2)*(x1-x2)+(x2^2-x1^2)*
+          (x1-x3)+(y2^2-y1^2)*(x1-x3))/(2*((y3-y1)*(x1-x2)- 
+           (y2-y1)*(x1-x3)))); 
+              
+E = (((x1^2-x3^2)*(y1-y2)+(y1^2-y3^2)*(y1-y2)+(x2^2-x1^2)* 
+          (y1-y3)+(y2^2-y1^2)*(y1-y3))/(2*((x3-x1)*(y1-y2)-
+           (x2 - x1)*(y1-y3))));  
+ 
+F = (-x1^2-y1^2)-(2*E*x1-2*D*y1);  
+
+H = -E;  
+K = -D;  
+SQRTROUND = (sqrt((H^2)+(K^2)-F));
+R = round(SQRTROUND);
+
+a  = [x1, y1];
+b = [x2, y2];
+c = [x3, y3];
+
+disp ('Given the data points: ');
+disp(a); disp(b); disp(c);
+
+disp('The center is: '); disp([H,K]);
+
+disp('The radius is: '); disp(R);
+
+disp('The vector is: '); disp([D,E,F]);
